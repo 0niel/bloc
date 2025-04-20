@@ -7,7 +7,7 @@ sidebar:
 
 import RemoteCode from '~/components/tutorials/RemoteCode.astro';
 import FlutterCreateSnippet from '~/components/tutorials/flutter-login/FlutterCreateSnippet.astro';
-import FlutterPackagesGetSnippet from '~/components/tutorials/flutter-login/FlutterPackagesGetSnippet.astro';
+import FlutterPubGetSnippet from '~/components/tutorials/FlutterPubGetSnippet.astro';
 
 ![intermediate](https://img.shields.io/badge/level-intermediate-orange.svg)
 
@@ -32,7 +32,7 @@ We'll start off by creating a brand new Flutter project
 
 Next, we can install all of our dependencies
 
-<FlutterPackagesGetSnippet />
+<FlutterPubGetSnippet />
 
 ## Authentication Repository
 
@@ -158,9 +158,7 @@ Let's start by updating the generated `pubspec.yaml` at the root of our project:
 
 We can install the dependencies by running:
 
-```sh
-flutter packages get
-```
+<FlutterPubGetSnippet />
 
 ## Authentication Bloc
 
@@ -441,7 +439,7 @@ Upon a successful `logIn` request, the state of the `AuthenticationBloc` will ch
 
 ### Home Page
 
-The `HomePage` can access the current user id via `context.select((AuthenticationBloc bloc) => bloc.state.user.id)` and displays it via a `Text` widget. In addition, when the logout button is tapped, an `AuthenticationLogoutRequested` event is added to the `AuthenticationBloc`.
+The `HomePage` can access the current user id via `context.select((AuthenticationBloc bloc) => bloc.state.user.id)` and displays it via a `Text` widget. In addition, when the logout button is tapped, an `AuthenticationLogoutPressed` event is added to the `AuthenticationBloc`.
 
 <RemoteCode
 	url="https://raw.githubusercontent.com/felangel/bloc/master/examples/flutter_login/lib/home/view/home_page.dart"
